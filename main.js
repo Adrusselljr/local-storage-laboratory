@@ -51,6 +51,7 @@ const listBuilderForm = document.querySelector("#listBuilderForm")
 const listBuilderInput = document.querySelector("#listBuilderInput")
 const orderedList = document.querySelector("#orderedList")
 
+// Default list string
 orderedList.innerText = "Your list is empty!"
 
 listBuilderForm.addEventListener('submit', e => {
@@ -66,6 +67,7 @@ listBuilderForm.addEventListener('submit', e => {
         orderedList.innerText = ""
         items = [newItem]
         localStorage.setItem('items', JSON.stringify(items))
+        // Creates first li
         const li = document.createElement("li")
         li.innerText = items
         orderedList.appendChild(li)
@@ -74,6 +76,7 @@ listBuilderForm.addEventListener('submit', e => {
         items = JSON.parse(items)
         items.push(newItem)
         localStorage.setItem('items', JSON.stringify(items))
+        // Creates rest of li's
         const li = document.createElement("li")
         li.innerText = items[items.length - 1]
         orderedList.appendChild(li)
