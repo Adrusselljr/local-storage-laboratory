@@ -42,7 +42,7 @@ else {
 
 // On page refresh, save to local storage
 savedCount++
-localStorage.setItem('savedCount', savedCount++)
+localStorage.setItem('savedCount', savedCount)
 
 // Challenge 3: List builder *****************************************************************************
 
