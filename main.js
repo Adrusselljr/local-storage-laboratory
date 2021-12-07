@@ -67,18 +67,15 @@ listBuilderForm.addEventListener('submit', e => {
         orderedList.innerText = ""
         items = [newItem]
         localStorage.setItem('items', JSON.stringify(items))
-        // Creates first li
-        const li = document.createElement("li")
-        li.innerText = items
-        orderedList.appendChild(li)
     }
     else {
         items = JSON.parse(items)
         items.push(newItem)
         localStorage.setItem('items', JSON.stringify(items))
-        // Creates rest of li's
+    }
+    for(const string of items) {
         const li = document.createElement("li")
-        li.innerText = items[items.length - 1]
+        li.innerText = string
         orderedList.appendChild(li)
     }
 
